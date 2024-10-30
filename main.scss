@@ -63,9 +63,8 @@ body {
   &__care__bg {
     position: relative;
     height: 7rem;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-bottom: -2rem;
+    border-radius: 10px;
+
     z-index: -1;
 
     img {
@@ -96,7 +95,6 @@ body {
 
   &__report {
     grid-row: 1 / -1;
-    background-color: var(--darkblue);
     border-radius: 10px;
 
     &__link {
@@ -118,13 +116,18 @@ body {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    margin-top: -1rem;
+    background-color: var(--darkblue);
+    border-radius: 10px;
   }
 }
 
 .author {
-  padding: 3rem 3rem 8rem 3rem;
+  position: relative;
+  padding: 3rem 3rem 11rem 3rem;
   background-color: var(--blue);
   border-radius: 10px;
+  z-index: 999;
   &__img {
     width: 4em;
     height: 100%;
@@ -156,7 +159,7 @@ body {
   border-radius: 10px;
   z-index: 1;
   transition: all 0.3s;
-
+  margin-top: -2rem;
   &__header {
     display: flex;
     align-items: center;
@@ -176,5 +179,100 @@ body {
   &__ellipsis:hover {
     filter: brightness(0) invert(1);
     cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 55%;
+  }
+  .grid {
+    gap: 2.5rem;
+    max-width: 90%;
+  }
+  .author {
+    padding: 3rem 3rem 10.5rem 3rem;
+  }
+}
+
+@media only screen and (max-width: 55em) {
+  html {
+    font-size: 50%;
+  }
+  .statistics {
+    padding: 2rem;
+  }
+  .author {
+    padding: 2rem 2rem 9rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 45em) {
+  .primary-heading {
+    font-size: 5rem;
+  }
+  .statistics__day {
+    font-size: 1.5rem;
+  }
+  .author {
+    padding: 2rem 2rem 8rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 41em) {
+  body {
+    height: auto;
+    margin-top: 5rem;
+  }
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    flex-basis: 80%;
+    &__links {
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 2.1rem;
+    }
+
+    &__report {
+      margin-bottom: 5rem;
+    }
+
+    &__blocks {
+      height: 24rem;
+    }
+  }
+  .author {
+    display: flex;
+    gap: 2rem;
+    padding: 3rem;
+
+    &__name {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 3rem;
+    }
+
+    &__img {
+      margin: 0;
+    }
+
+    &__description {
+      margin: 0;
+    }
+  }
+  .statistics__time {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .statistics__day {
+    font-size: 1.8rem;
+  }
+  .statistics__header {
+    margin-bottom: 2rem;
   }
 }
