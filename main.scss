@@ -1,7 +1,7 @@
 :root {
   // ### Primary
   --blue: hsl(246, 80%, 60%);
-  --lightred: hsl(15, 100%, 70%); //(work)
+  --lightorange: hsl(15, 100%, 70%); //(work)
   --softblue: hsl(195, 74%, 62%); //(play)
   --lightred: hsl(348, 100%, 68%); //(study)
   --limegree: hsl(145, 58%, 55%); //(exercise):
@@ -38,16 +38,60 @@ body {
   background-color: var(--verydarkblue);
 }
 
+.primary-heading {
+  font-size: 6rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   max-width: 120rem;
   gap: 3rem;
+
   &__blocks {
-    padding: 3rem;
-    background-color: var(--darkblue);
-    border-radius: 10px;
+    height: 25.5rem;
+  }
+
+  &__work__bg,
+  &__play__bg,
+  &__study__bg,
+  &__exercise__bg,
+  &__social__bg,
+  &__care__bg {
+    position: relative;
+    height: 7rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: -2rem;
+    z-index: -1;
+
+    img {
+      position: absolute;
+      right: 0;
+      z-index: -1;
+    }
+  }
+
+  &__work__bg {
+    background-color: var(--lightorange);
+  }
+  &__play__bg {
+    background-color: var(--softblue);
+  }
+  &__study__bg {
+    background-color: var(--lightred);
+  }
+  &__exercise__bg {
+    background-color: var(--limegree);
+  }
+  &__social__bg {
+    background-color: var(--violet);
+  }
+  &__care__bg {
+    background-color: var(--softorange);
   }
 
   &__report {
@@ -105,21 +149,32 @@ body {
   }
 }
 
-// <div class="grid__report grid__blocks">
-// <figure class="author">
-//   <img src="images/image-jeremy.png" alt="Jeremy" class="author__img" />
-//   <p class="author__description">Report for</p>
-//   <figcaption class="author__name">Jeremy Robson</figcaption>
-// </figure>
-// <a href="#" class="grid__report__link">Daily</a>
-// <a href="#" class="grid__report__link">Weekly</a>
-// <a href="#" class="grid__report__link">Monthly</a>
-// </div>
-// <div class="grid__work grid__blocks">
-// <div class="grid__work__bg"></div>
-// </div>
-// <div class="grid__play grid__blocks"></div>
-// <div class="grid__study grid__blocks"></div>
-// <div class="grid__exercise grid__blocks"></div>
-// <div class="grid__social grid__blocks"></div>
-// <div class="grid__care grid__blocks"></div>
+.statistics {
+  color: var(--white);
+  padding: 3rem;
+  background-color: var(--darkblue);
+  border-radius: 10px;
+  z-index: 1;
+  transition: all 0.3s;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
+  &__time {
+    margin-top: auto;
+  }
+
+  &__day {
+    color: var(--paleblue);
+    font-weight: 300;
+  }
+
+  &__ellipsis:hover {
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+  }
+}

@@ -1,6 +1,6 @@
 :root {
   --blue: hsl(246, 80%, 60%);
-  --lightred: hsl(15, 100%, 70%);
+  --lightorange: hsl(15, 100%, 70%);
   --softblue: hsl(195, 74%, 62%);
   --lightred: hsl(348, 100%, 68%);
   --limegree: hsl(145, 58%, 55%);
@@ -34,6 +34,12 @@ body {
   background-color: var(--verydarkblue);
 }
 
+.primary-heading {
+  font-size: 6rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -42,9 +48,38 @@ body {
   gap: 3rem;
 }
 .grid__blocks {
-  padding: 3rem;
-  background-color: var(--darkblue);
-  border-radius: 10px;
+  height: 25.5rem;
+}
+.grid__work__bg, .grid__play__bg, .grid__study__bg, .grid__exercise__bg, .grid__social__bg, .grid__care__bg {
+  position: relative;
+  height: 7rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: -2rem;
+  z-index: -1;
+}
+.grid__work__bg img, .grid__play__bg img, .grid__study__bg img, .grid__exercise__bg img, .grid__social__bg img, .grid__care__bg img {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+.grid__work__bg {
+  background-color: var(--lightorange);
+}
+.grid__play__bg {
+  background-color: var(--softblue);
+}
+.grid__study__bg {
+  background-color: var(--lightred);
+}
+.grid__exercise__bg {
+  background-color: var(--limegree);
+}
+.grid__social__bg {
+  background-color: var(--violet);
+}
+.grid__care__bg {
+  background-color: var(--softorange);
 }
 .grid__report {
   grid-row: 1/-1;
@@ -89,4 +124,30 @@ body {
   font-weight: 300;
   color: var(--white);
   line-height: 1.2;
+}
+
+.statistics {
+  color: var(--white);
+  padding: 3rem;
+  background-color: var(--darkblue);
+  border-radius: 10px;
+  z-index: 1;
+  transition: all 0.3s;
+}
+.statistics__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.statistics__time {
+  margin-top: auto;
+}
+.statistics__day {
+  color: var(--paleblue);
+  font-weight: 300;
+}
+.statistics__ellipsis:hover {
+  filter: brightness(0) invert(1);
+  cursor: pointer;
 }
