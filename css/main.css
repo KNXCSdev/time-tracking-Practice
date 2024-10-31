@@ -241,3 +241,6 @@ body {
     margin-bottom: 2rem;
   }
 }
+.clicked:link, .clicked:visited {
+  color: var(--white);
+}
